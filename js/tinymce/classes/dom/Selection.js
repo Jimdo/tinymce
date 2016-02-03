@@ -499,7 +499,7 @@ define("tinymce/dom/Selection", [
 
 			// Use last rng passed from FocusManager if it's available this enables
 			// calls to editor.selection.getStart() to work when caret focus is lost on IE
-			if (!w3c && self.lastFocusBookmark) {
+			if (isIE && !w3c && self.lastFocusBookmark) {
 				var bookmark = self.lastFocusBookmark;
 
 				// Convert bookmark to range IE 11 fix
